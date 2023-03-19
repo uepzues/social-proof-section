@@ -184,7 +184,7 @@ main {
 
   .wrapper {
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 90px;
     display: grid;
     grid-template-columns: repeat(2, 45%);
     column-gap: 50px;
