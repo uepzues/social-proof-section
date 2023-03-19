@@ -1,0 +1,231 @@
+:root {
+  /* ## Colors */
+  /* ### Primary */
+  --color-veryDarkMagenta: hsl(300, 43%, 22%);
+  --color-softPink: hsl(333, 80%, 67%);
+  /* ### Neutral */
+  --color-darkGrayishMagenta: hsl(303, 10%, 53%);
+  --color-lightGrayishMagenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+  --ff-League: "League Spartan", sans-serif;
+}
+
+/* Josh Comeau's css reset */
+/* 1. Use a more-intuitive box-sizing model.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*  3. Allow percentage-based heights in the application */
+html,
+body {
+  height: 100%;
+}
+/*  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*  6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*  7. Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*  8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*  9. Create a root stacking context */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* General Styles */
+
+body {
+  background-image: url(/images/bg-pattern-top-mobile.svg),
+    url(/images/bg-pattern-bottom-mobile.svg);
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  font-size: 15px;
+  font-family: var(--ff-League);
+  font-weight: 400;
+  border: 3px solid red;
+}
+
+main {
+  text-align: center;
+}
+
+.wrapper {
+  margin: auto 1.5em;
+}
+
+.header {
+  margin-top: 4em;
+}
+
+.header__head {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-veryDarkMagenta);
+}
+
+.header__text {
+  font-size: 1rem;
+  margin: 2em 0;
+  color: var(--color-darkGrayishMagenta);
+}
+
+.review__group {
+  background-color: var(--color-lightGrayishMagenta);
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+.review__text {
+  font-weight: 700;
+  color: var(--color-veryDarkMagenta);
+}
+
+.bi-star-fill {
+  letter-spacing: 0.5em;
+  color: goldenrod;
+}
+
+.card {
+  position: relative;
+  background-color: var(--color-veryDarkMagenta);
+  color: var(--color-lightGrayishMagenta);
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 0.5em;
+  text-align: left;
+}
+
+.card__pic {
+  border-radius: 25px;
+  width: 3em;
+  margin-bottom: 20px;
+}
+
+.card__name,
+.card__verified {
+  position: absolute;
+  left: 90px;
+}
+
+.card__name {
+  top: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card__verified {
+  top: 50px;
+  font-size: 0.95rem;
+  color: var(--color-softPink);
+}
+
+.card__text {
+  font-weight: 500;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url(/images/bg-pattern-top-desktop.svg),
+      url(/images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat, no-repeat;
+  }
+  main {
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .wrapper {
+    justify-content: center;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .header__head {
+    font-size: 3rem;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+  }
+
+  .review__group {
+    display: inherit;
+    justify-content: center;
+    margin: 10px auto;
+    width: 360px;
+  }
+
+  .review > :nth-child(1) {
+    margin-left: 0;
+  }
+
+  .review > :nth-child(3) {
+    margin-right: 0;
+  }
+
+  .card-group {
+    margin-top: 50px;
+    grid-column-start: span 2;
+    display: flex;
+    column-gap: 20px;
+    position: relative;
+  }
+
+  .card-group > :nth-child(1) {
+    top: -20px;
+  }
+
+  .card-group > :nth-child(3) {
+    bottom: -20px;
+  }
+}
